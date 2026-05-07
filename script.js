@@ -99,21 +99,18 @@
     });
 
     // ---- 6. Formulario feedback ----
+    // === Funcionalidad del formulario brutalista ===
     const form = document.getElementById('brutalForm');
     const feedbackP = document.getElementById('formFeedback');
-    if(form){
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre')?.value.trim();
-            const email = document.getElementById('email')?.value.trim();
-            if(!nombre || !email){
-                feedbackP.innerText = '❌ ERROR: CAMPOS VACÍOS.';
-                return;
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que se recargue la página
+            if (feedbackP) {
+                feedbackP.textContent = 'Mensaje enviado. Ruido en la línea. Contactaremos pronto.';
+                feedbackP.style.color = 'var(--neon-green)'; // cambia a verde neón
             }
-            feedbackP.innerText = `✔ ENVÍO EXITOSO, ${nombre.toUpperCase()}!`;
-            feedbackP.style.color = '#00ff6c';
-            setTimeout(() => feedbackP.innerText = '', 4000);
-            form.reset();
+            form.reset(); // Limpia los campos
         });
     }
 
