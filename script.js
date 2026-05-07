@@ -107,9 +107,9 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault(); // Evita que se recargue la página
             if (feedbackP) {
-                feedbackP.textContent = 'Mensaje enviado. Ruido en la línea. Contactaremos pronto.';
-                feedbackP.style.color = 'var(--neon-green)'; // cambia a verde neón
-            }
+                feedbackP.textContent = '>>> MENSAJE ENVIADO. RUIDO EN LA LÍNEA. <<<';
+                feedbackP.style.color = 'var(--neon-green)';
+                }
             form.reset(); // Limpia los campos
         });
     }
